@@ -1,0 +1,32 @@
+.divHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4px;
+    height: 10%;
+    background-color: blueviolet;
+}
+
+#divMain {
+    height: 70%;
+    border: 1px solid rgb(78, 54, 82);
+    background-color: thistle;
+}
+
+#divFooter {
+    height: 10%;
+    text-align:right;
+}
+.sideNav {
+    width: 180px;
+    height: calc(100vh - 126px);
+    float: left;
+    background-color: #fff;
+}
+.mainContent {
+    width: calc(100% - 180px);
+    background-color: #f0d5d5;
+    float: right;
+    height: calc(100vh - 126px);
+    overflow: auto;
+}
