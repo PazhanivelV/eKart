@@ -32,21 +32,16 @@ function Home() {
             </div>
 
             <div id='divMain'>
-               
-                 
-                        <div id='Product'>
-                            <div id='divSidebar' className='sideNav mx-0 p-1 d-flex align-content-top flex-wrap '>
-                                <Sections onSelect={setSelectedProduct}></Sections>
-                            </div>
-                            <div id='divContent' className='mainContent '>
-                                <Products selectedProduct={selectedProduct}></Products>
-                            </div>
-                        </div>
-                   
-
-                        <div id='Common'>
-                        </div>
-                   
+                <div id='Product'>
+                    <div id='divSidebar' className='sideNav mx-0 p-1 d-flex align-content-top flex-wrap'>
+                        <Sections onSelect={setSelectedProduct}></Sections>
+                    </div>
+                    <div id='divContent' className='mainContent  '>
+                        <Products selectedProduct={selectedProduct}></Products>
+                    </div>
+                </div>
+                <div id='Common'>
+                </div>
             </div >
             <div id='divFooter'><h5 style={{ padding: '8px' }}>Powered by Guvi</h5></div>
         </>

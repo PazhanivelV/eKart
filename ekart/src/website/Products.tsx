@@ -7,7 +7,7 @@ import laptop4 from './imgs/Products/Laptop/4.png';
 import hs1 from './imgs/Products/HeadSet/1.jpg';
 import hs2 from './imgs/Products/HeadSet/2.jpg';
 import hs3 from './imgs/Products/HeadSet/3.jpg';
- 
+
 import ms1 from './imgs/Products/Mouse/1.jpg';
 import ms2 from './imgs/Products/Mouse/2.jpg';
 
@@ -29,12 +29,12 @@ type ProductDetails = {
 
 type Props = {
     selectedProduct: Product | null;
-   
+
 };
 
 function Products({ selectedProduct }: Props) {
 
- 
+
 
     if (!selectedProduct) {
         <>
@@ -42,10 +42,10 @@ function Products({ selectedProduct }: Props) {
         </>
 
     } else {
-       // console.log(selectedProduct);
+        // console.log(selectedProduct);
 
         let productDetails: ProductDetails[] = [];
-
+        //#region Product Details
         switch (selectedProduct.id) {
             case 1:
                 productDetails = [
@@ -80,7 +80,7 @@ function Products({ selectedProduct }: Props) {
                 ] as ProductDetails[];
                 break
             case 2:
-                 productDetails = [
+                productDetails = [
                     {
                         id: 1,
                         title: 'Sony WH-1000XM5 Noise Cancelling Wireless Headphones',
@@ -105,7 +105,7 @@ function Products({ selectedProduct }: Props) {
                 ] as ProductDetails[];
                 break;
             case 3:
-                  productDetails = [
+                productDetails = [
                     {
                         id: 1,
                         title: 'HP M120 Wireless Mouse',
@@ -123,7 +123,7 @@ function Products({ selectedProduct }: Props) {
                 ] as ProductDetails[];
                 break;
             case 4:
-                 productDetails = [
+                productDetails = [
                     {
                         id: 1,
                         title: 'HP K120 Wired Keyboard',
@@ -133,31 +133,43 @@ function Products({ selectedProduct }: Props) {
                     }] as ProductDetails[];
                 break;
         }
+        //#endregion
         return (
             <>
                 <div className='row mx-0 p-1'>
                     {
                         productDetails.map((item) => (
-                            <div className="col-12 col-sm-6 col-md-4 col-lg-6 card p-1 m-0">
-                                <img src={item.image} className="img-fluid" alt={item.brand}></img>
-                                <div className="card-body">
-                                    <div><h6 className="card-title">{item.title}</h6> </div>
+                            // <div className="col-12 col-sm-6 col-md-4 col-lg-6 card p-1 m-0">
+                            //     <img src={item.image}  className="rounded d-block" alt={item.brand}></img>
+                            //     <div className="card-body">
+                            //         <div><h6 className="card-title">{item.title}</h6> </div>
+                            //         <div>
+                            //             <div className='left-0'>
+                            //                 <b><p className="card-text">Brand : {item.brand}</p></b>
+                            //             </div>
+                            //             <div className='right-0'>
+                            //                 <b> <p className="card-text">Price : {item.price}</p></b>
+                            //             </div>
+                            //         </div>
+                            //     </div>
+                            // </div>
 
-                                    <div>
-                                        <div className='left-0'>
-                                           <b><p className="card-text">Brand : {item.brand}</p></b> 
-                                        </div>
-                                        <div className='right-0'>
-                                           <b> <p className="card-text">Price : {item.price}</p></b> 
-                                        </div>
-                                    </div>
+                            <div className="card" style={{ width: '18rem;' }}>
+                                <img src={item.image} className="rounded mx-auto d-block" alt="..." />
+                                <div className="card-body">
+                                    <h5 className="card-title">{item.title}</h5>
+                                    <p className="card-text"> Brand : {item.brand} </p>
+                                    <p className="card-text">  Price र : {item.price} </p>
                                 </div>
                             </div>
+
 
                         ))
                     }
 
                 </div>
+
+
 
             </>
         )
